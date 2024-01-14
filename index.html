@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea.js 소개 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .demo-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        canvas {
+            border: 1px solid #ddd;
+        }
+
+        table.tea-table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        table.tea-table th,
+        table.tea-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table.tea-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tea.js 라이브러리</h1>
+        <p>간단한 그래프와 표 생성을 위한 JavaScript 라이브러리</p>
+    </header>
+
+    <div class="container">
+        <h2>막대 그래프 생성</h2>
+        <p>Tea.js를 사용하여 막대 그래프를 생성할 수 있습니다. 아래는 예시입니다.</p>
+        <div class="demo-container">
+            <div id="chartContainer"></div>
+        </div>
+
+        <h2>테이블 생성</h2>
+        <p>데이터를 테이블로 표시할 수도 있습니다. 아래는 예시입니다.</p>
+        <div class="demo-container">
+            <div id="tableContainer"></div>
+        </div>
+    </div>
+
+    <script src="tea.js"></script>
+    <script>
+        const data = [10, 20, 30, 40, 50];
+        const labels = ['A', 'B', 'C', 'D', 'E'];
+        Tea.createBarChart(data, labels, 'chartContainer');
+
+        const tableData = [
+            ['Header 1', 'Header 2', 'Header 3'],
+            ['Data 1', 'Data 2', 'Data 3'],
+            ['Data 4', 'Data 5', 'Data 6']
+        ];
+        Tea.createTable(tableData, 'tableContainer');
+    </script>
+</body>
+</html>
